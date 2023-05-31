@@ -25,6 +25,14 @@ public class WebSecurityConfig {
                         .loginPage("/login")
                         .permitAll()
                 )
+                .formLogin((form) -> form
+                        .loginPage("/signup")
+                        .permitAll()
+                )
+                .formLogin((form) -> form
+                        .loginPage("/home")
+                        .permitAll()
+                )
                 .logout((logout) -> logout.permitAll());
 
         return http.build();
